@@ -16,3 +16,7 @@ it("should return sum of two numbers when entered seperated by a comma", () => {
 	expect (add("490,3")).toBe(493);
 })
 
+it("should return sum of multible numbers when entered seperated by a comma", () => {
+	expect (add("10,3,33,400")).toBe(446);
+})
+
