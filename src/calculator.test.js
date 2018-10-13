@@ -51,7 +51,6 @@ it("should return a sum of all the numbers who are lower or equal to 1000 - mixe
 	expect (add("3\n35,4,1001")).toBe(42);
 })
 
-
 it("adds multiple numbers with an additional custom * delimiter as well as comma and newline", () => {
 	expect (add("//*3,35*4\n1001")).toBe(42);
 })

@@ -8,6 +8,8 @@ function add(numbers){
 	var delimiters = /[\n ,]/; //default delimiters
 
 	// This functions adds a custom delimiter to the regular expression if asked to
+	// Refactoring this function for some reason creates a bug where / cannot be used as a delimiter
+	// so here it will stay for the time being
 	if(numbers.startsWith('//')){
 		var newDelimiter = numbers[2];
 		numbers = numbers.substring(3);
