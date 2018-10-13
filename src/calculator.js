@@ -5,6 +5,8 @@ function add(numbers){
 		return 0;
 	}
 
+
+
 	//if the string contains a valid seperator this will seperate the array and summerize
 	if(numbers.includes(',') || numbers.includes('\n')){
 	var numberArray = numbers.split(/[\n , ]/);		
@@ -17,11 +19,27 @@ function add(numbers){
 
 //This function takes in an array of numbers and returns the sum of the values
 function sum(array){
-		var total = 0;
+
+	///this function should validate that no value is below zero
+	if(array.some(negativeNumbersCheck)){
+		var bannedNumbers = [];
 		for(var i = 0; i < array.length; i++){
-			total += parseInt(array[i]);
+			if(array[i] < 0){
+				bannedNumbers.push(array[i]);
+			}
 		}
-		return total;
+		throw "Negatives not allowed: " + bannedNumbers;
+	}
+
+	var total = 0;
+	for(var i = 0; i < array.length; i++){
+		total += parseInt(array[i]);
+	}
+	return total;
+}
+
+function negativeNumbersCheck(containsNegatives){
+	return containsNegatives < 0;
 }
 
 module.exports = add;
