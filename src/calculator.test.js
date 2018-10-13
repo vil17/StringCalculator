@@ -20,3 +20,14 @@ it("should return sum of multible numbers when entered seperated by a comma", ()
 	expect (add("10,3,33,400")).toBe(446);
 })
 
+it("should return sum of multible numbers when entered seperated by a comma or newline", () => {
+	expect (add("10,3\n35,400")).toBe(448);
+})
+
+it("should return sum of two numbers when entered seperated by a newline", () => {
+	expect (add("3\n35")).toBe(38);
+})
+
+it("should return sum of multible numbers when entered seperated by a comma", () => {
+	expect (add("3\n35\n4")).toBe(42);
+})
