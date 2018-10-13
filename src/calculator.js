@@ -5,15 +5,19 @@ function add(numbers){
 	}
 
 	if(numbers.includes(',')){
-		var numberArray = numbers.split(',');
-		var total = 0;
-		for(var i = 0; i < numberArray.length; i++){
-			total += parseInt(numberArray[i]);
-		}
-		return total;
+	var numberArray = numbers.split(',');		
+		return sum(numberArray);
 	}
 
 	return parseInt(numbers);
+}
+
+function sum(array){
+		var total = 0;
+		for(var i = 0; i < array.length; i++){
+			total += parseInt(array[i]);
+		}
+		return total;
 }
 
 module.exports = add;
