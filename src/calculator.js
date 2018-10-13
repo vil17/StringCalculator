@@ -5,9 +5,18 @@ function add(numbers){
 		return 0;
 	}
 
+	var delimiters = /[\n ,]/; //default delimiters
+
+	// This functions adds a custom delimiter to the regular expression if asked to
+	if(numbers.startsWith('//')){
+		var newDelimiter = numbers[2];
+		numbers = numbers.substring(3);
+		delimiters = new RegExp("[\\n " + ", " + newDelimiter.toString() + "]");
+	}
+
 	//if the string contains a valid seperator this will seperate the array and summerize
-	if(numbers.includes(',') || numbers.includes('\n')){
-	var numberArray = numbers.split(/[\n , ]/);		
+	if(numbers.match(delimiters)){
+	var numberArray = numbers.split(delimiters);		
 		return sum(numberArray);
 	}
 
