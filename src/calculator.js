@@ -23,7 +23,9 @@ function sum(array){
 
 	var total = 0;
 	for(var i = 0; i < array.length; i++){
-		total += parseInt(array[i]);
+		if(array[i] <= 1000){				// This if-sentence makes sure to ignore values higher than 1000
+			total += parseInt(array[i]);
+		}
 	}
 	return total;
 }
